@@ -1,15 +1,18 @@
 import { useEffect, useContext, useState } from 'react'
 import { apiDomain } from '../utils/utils'
 import axios from 'axios'
-import { Context } from '../context/userContext/Context'
+// import { Context } from '../context/userContext/Context'
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 import './todolist.css'
 import UpdateForm from './UpdateForm'
+import {useSelector} from "react-redux"
+
+
 function TodoList() {
     const [showEditForm, setShowEditForm] = useState(false)
     const [todos, setTodos] = useState([])
     const [tempTodo, setTempTodo] = useState('')
-    const { user } = useContext(Context)
+    const user = useSelector(state => state.user);
     const getTodos = async () => {
         const res = await axios.get(`${apiDomain}/todos`,
             { headers: { "Authorization": `${user.token}` } }

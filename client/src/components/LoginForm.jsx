@@ -24,6 +24,7 @@ export default function LoginForm() {
   const onSubmit = (data) => {
     Axios.post(`${apiDomain}/auth/login`, data)
       .then(({ data }) => {
+        console.log(data)
         if (data.token) {
           dispatch(login({token: data.token, name: data.username, email: data.email }));
           navigate('/todos');

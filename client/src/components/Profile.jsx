@@ -1,11 +1,10 @@
 import './profile.css';
 import userAvator from '../assets/userAvator.webp';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../redux/userSlice';
+// import { selectUser } from '../redux/userSlice';
 
 export default function Profile() {
-  const user = useSelector(selectUser);
-
+  const user = useSelector((state) => state.user);
   return (
     <div className='profile'>
       <div className="userAvator">

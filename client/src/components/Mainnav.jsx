@@ -1,11 +1,14 @@
 import './mainnav.css'
-import { useContext } from 'react'
-import { Context } from '../context/todoContext/Context'
+// import { useContext } from 'react'
+// import { Context } from '../context/todoContext/Context'
 import Profile from './Profile';
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
+import { useSelector } from 'react-redux';
 export default function Mainnav() {
-    const { ui } = useContext(Context);
+    // const { ui } = useContext(Context);
+    const {ui} = useSelector(state => state.ui)
+
     return (
         <div className='mainnav'>
             {
