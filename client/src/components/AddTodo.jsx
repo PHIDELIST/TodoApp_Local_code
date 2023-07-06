@@ -33,8 +33,9 @@ export default function AddTodo() {
                 <textarea
                     {...register("description")}
                     name="description"
-                    id="description"
-                ></textarea>
+                    id="description">
+
+                </textarea>
                 <p>{errors.description?.message}</p>
                 <input className="submitBtn" type="submit" value="save" />
             </form>

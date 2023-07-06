@@ -22,7 +22,6 @@ export const userSlice = createSlice({
     logout: (state) => {
       state.username = 'name';
       state.email = 'email';
-   
       localStorage.removeItem('user');
     },
    
